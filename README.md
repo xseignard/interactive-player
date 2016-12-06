@@ -27,15 +27,25 @@ cd ~
 git clone https://github.com/xseignard/interactive-player.git
 ```
 
-## Overclock RPi2
+## Overclock RPi
 
-Copy `misc/config.txt` to `/boot/config.txt`
-
-```
-sudo cp misc/config.txt /boot/config.txt
-```
+Set 256mb to the GPU memory via sudo raspi-config
 
 ## Compile and run it
+
+You may need to increase swapfile: `sudo nano /etc/dphys-swapfile`
+
+And replace:
+
+```
+CONF_SWAPFILE=100
+```
+
+by
+
+```
+CONF_SWAPFILE=1024
+```
 
 Add the env variables to the `/etc/environment` file (once)
 
