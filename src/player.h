@@ -28,5 +28,5 @@ class player : public ofBaseApp {
 		// previous key pin state
 		bool previousKeyState;
 		// debug flag
-		const static bool DEBUG = true;
+		const static bool DEBUG = false;
 };
