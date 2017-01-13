@@ -59,6 +59,14 @@ Compile and run (for developement)
 make && make runRelease
 ```
 
+## More sound
+
+Add the following to `/etc/rc.local`:
+
+```
+amixer set PCM,0 100%
+```
+
 ## `init.d` script
 
 Copy the following
