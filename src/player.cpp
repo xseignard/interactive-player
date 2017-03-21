@@ -9,7 +9,9 @@ void player::setup() {
 	ofHideCursor();
 	ofxOMXPlayerSettings settings;
 	settings.videoPath = "/home/pi/idle.mp4";
+	settings.useHDMIForAudio =  false;
 	omxPlayer.setup(settings);
+	omxPlayer.setVolume(1);
 	// starting states
 	currentUsbState = true;
 	previousUsbState = true;
