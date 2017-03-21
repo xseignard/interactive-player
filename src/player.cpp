@@ -8,7 +8,7 @@ void player::setup() {
 	ofBackground(0, 0, 0);
 	ofHideCursor();
 	ofxOMXPlayerSettings settings;
-	settings.videoPath = "/home/pi/idle.mov";
+	settings.videoPath = "/home/pi/idle.mp4";
 	omxPlayer.setup(settings);
 	// starting states
 	currentUsbState = true;
@@ -40,18 +40,18 @@ void player::update() {
 
 	// key is on, play enigma, no matter what is the state of usb
 	if (currentKeyState != previousKeyState && !currentKeyState) {
-		omxPlayer.loadMovie("/home/pi/test.mp4");
+		omxPlayer.loadMovie("/home/pi/evac.mp4");
 	}
 	// usb on, play radar
 	else if (currentUsbState != previousUsbState && !currentUsbState) {
-		omxPlayer.loadMovie("/home/pi/radar.mov");
+		omxPlayer.loadMovie("/home/pi/radar.mp4");
 	}
 	// usb off or key off, play idle
 	else if (
 		(currentUsbState != previousUsbState && currentUsbState) ||
 		(currentKeyState != previousKeyState && currentKeyState)
 	) {
-		omxPlayer.loadMovie("/home/pi/idle.mov");
+		omxPlayer.loadMovie("/home/pi/idle.mp4");
 	}
 
 	// update previous states
